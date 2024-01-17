@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sodium - Setup Site</title>
+    <link rel="stylesheet" href="css/setup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sora:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="setup-cont">
+        <div id="welcome" class="setup-step active">
+            <h1>Welcome to <span class="gradient-text">Sodium</span>.</h1>
+            <p>To start your journey and set up your site for successful selling, we need some information. Our Setup Helper will guide you through this process smoothly.</p>
+            <button onclick="setupManager.goToNextStep()"><span>Start Setup!</span></button>
+        </div>
+
+        <div id="setdata" class="setup-step">
+            <h1>Set the necessary <span class="gradient-text">Data</span> so <span class="gradient-text">Sodium</span> can access your database.</h1>
+            <div class="field">
+                <span class="label">Database Host</span>
+                <input type="text" id="hostInput" class="input" value="localhost">
+                <small>Normally, localhost will work here, if not, contact the support of your hosting provider and they can help!</small>
+            </div>
+            <div class="field">
+                <span class="label">Database Username</span>
+                <input type="text" id="usernameInput" class="input">
+            </div>
+            <div class="field">
+                <span class="label">Database Password</span>
+                <input type="password" id="passwordInput" class="input">
+            </div>
+            <div class="field">
+                <span class="label">Database Name</span>
+                <input type="text" id="databaseNameInput" class="input">
+            </div>
+            <button onclick="setupManager.setConfigParameters()"><span>Continue</span></button>
+        </div>
+
+        <div id="register" class="setup-step">
+            <h1>Register an account to manage your <span class="gradient-text">website</span>.</h1>
+            <div class="field">
+                <span class="label">Email</span>
+                <input type="email" id="emailInput" class="input">
+            </div>
+            <div class="field">
+                <span class="label">Password</span>
+                <input type="password" id="passInput" class="input">
+            </div>
+            <button onclick="setupManager.registerUser()"><span>Continue</span></button>
+        </div>
+
+        <div id="done" class="setup-step">
+            <h1>You are <span class="gradient-text">done</span>!</h1>
+            <p>Whoah! That was fast!! You can start exploring and I can't wait for your first sell.</p>
+            <button onclick="setupManager.sendToManager()"><span>Start Using My Website</span></button>
+        </div>
+    </div>
+    <script src="js/setup.js"></script>
+</body>
+</html>

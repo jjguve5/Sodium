@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sora:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loading" class="load">
+        <div class="spinner"></div>
+    </div>
+    <div id="content" class="hide">
+        <div class="container">
+            <div class="side-bar">
+                <div class="top">
+                    <img class="logo"  onclick="GoToPage('home')" src="../sd-content/assets/general/logo_trimmed.png" alt="">
+                    <div class="links">
+                        <div class="link" onclick="GoToPage('pages')" id="page-pages">
+                            <i class="fa-solid fa-file"></i>
+                            <span>Pages</span>
+                        </div>
+                        <div class="link" onclick="GoToPage('tables')" id="page-tables">
+                            <i class="fa-solid fa-table"></i>
+                            <span>Tables</span>
+                        </div>
+                        <div class="link" onclick="GoToPage('assets')" id="page-assets">
+                            <i class="fa-regular fa-folder-open"></i>
+                            <span>Assets</span>
+                        </div>
+                        <div class="link" onclick="GoToPage('emails')" id="page-emails">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Emails</span>
+                        </div>
+                        <div class="link" onclick="GoToPage('products')" id="page-products">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                            <span>Products</span>
+                        </div>
+                        <div class="link" onclick="GoToPage('subscriptions')" id="page-subscriptions">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Subscriptions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bot">
+
+                </div>
+            </div>
+            <div id="main-page" class="main-page"></div>
+        </div>
+    </div>
+    <script src="../sd-utils/frontend/auth/authHelper.js"></script>
+    <script src="../sd-utils/frontend/general/navigationHelper.js"></script>
+    <script src="../sd-utils/frontend/general/communicationHelper.js"></script>
+    <script src="../sd-utils/frontend/general/modalHandler.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
