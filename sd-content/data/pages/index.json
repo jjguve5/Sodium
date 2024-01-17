@@ -1,4 +1,7 @@
 {
     "title":"Index",
-    "createdOn":1
+    "createdOn":1,
+    "pageURL": "index.html",
+    "deletable": false,
+    "key":"index"
 }

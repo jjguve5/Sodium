@@ -30,9 +30,9 @@ class CommunicationHelper{
         }
     }
 
-    async get(){
+    async get(url){
         for(let i=0;i<this.maxRetries;i++){
-            const response = await this.fetch(url,"GET",JSON.stringify(vars));
+            const response = await this.fetch(url,"GET");
             if(response) return response;
         }
     }

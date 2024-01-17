@@ -10,7 +10,7 @@ defineIfNotExists('PagesHandler', class PagesHandler {
     }
 
     async loadPages(){
-        const response = await commHelper.post(navHelper.GetUtilsUrl() + "backend/admin/pages/getPages.php", {});
+        const response = await commHelper.get(navHelper.GetUtilsUrl() + "backend/admin/pages/getPages.php", {});
         this.pages = response.pages;
         this.sortPages();
         this.setPages();
@@ -69,6 +69,8 @@ defineIfNotExists('PagesHandler', class PagesHandler {
 
     viewPage(index){
         console.log("View page for page "+index+" clicked!");
+        //open in new tab 
+        window.open(navHelper.GetRootUrl()+pagesHandler.pages[index].pageURL, "_blank");
     }
 
     editPage(index){
@@ -80,7 +82,21 @@ defineIfNotExists('PagesHandler', class PagesHandler {
     }
 
     deletePage(index){
-        console.log("Delete page for page "+index+" clicked!");
+        modalHandler.openModal("delete-page-modal");
+        document.getElementById('forcedelete-page-button').onclick = ()=>{pagesHandler.forceDeletePage(index)};
+    }
+
+    async forceDeletePage(index){
+        modalHandler.closeCurrentModal();
+        
+        const response = await commHelper.post(navHelper.GetUtilsUrl() + "backend/admin/pages/deletePage.php", {pageKey:pagesHandler.pages[index].key});
+        if(!response.success){
+            //TODO: ERROR PROMPT
+        } else {
+            this.pages.splice(index,1);
+            this.setPages();
+            //TODO: SUCCESS PROMPT
+        }
     }
 });
 

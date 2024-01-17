@@ -1,4 +1,7 @@
 {
     "title":"Checkout",
-    "createdOn":0
+    "createdOn":5,
+    "pageURL":"checkout.html",
+    "deletable": true,
+    "key":"checkout"
 }

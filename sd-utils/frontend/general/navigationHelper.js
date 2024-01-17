@@ -7,6 +7,10 @@ class NavigationHelper {
         return document.currentScript.src.split("sd-admin/")[0].replace(window.origin,"");
     }
 
+    GetRootUrl(){
+        return this.rootURL;
+    }
+
     GetUtilsUrl(){
         return this.rootURL + "sd-utils/"
     }

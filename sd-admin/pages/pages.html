@@ -38,4 +38,21 @@
         </div>
     </div>
 </div>
+
+<div id="delete-page-modal" class="modal hide" onclick="modalHandler.closeModal(event)">
+    <div class="modal-content">
+        <div class="modal-title">
+            Delete Page
+        </div>
+        <hr>
+        <div class="modal-field">
+            <span class="modal-label">Are you sure you want to delete this page?</span>
+            <span class="modal-label">This action CANNOT BE UNDONE!</span>
+        </div>
+        <div class="modal-buttons">
+            <div onclick="modalHandler.closeCurrentModal()" class="modal-button button">Cancel</div>
+            <div id="forcedelete-page-button" class="modal-button button modal-cancel-button">Delete Page</div>
+        </div>
+    </div>
+</div>
 <script src="js/pages.js"></script>
