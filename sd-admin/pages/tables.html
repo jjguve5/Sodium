@@ -1,65 +1,45 @@
 <div class="page-header">
     <span class="title">My Tables</span>
-    <div class="button">
+    <div class="button" onclick="pagesHandler.createPage()">
         <i class="fa-solid fa-plus"></i>
         <span>ADD TABLE</span>
     </div>
 </div>
-<div class="item-list">
-    <div class="item">
-        <div class="item-title">Users</div>
-        <div class="item-buttons">
-            <div class="item-button button-view" data-tooltip="View Data">
-                <i class="fa-regular fa-eye"></i>
-            </div>
-            <div class="item-button button-edit" data-tooltip="Edit Structure">
-                <i class="fa-solid fa-pencil"></i>
-            </div>
-            <div class="item-button button-delete" data-tooltip="Delete Table">
-                <i class="fa-solid fa-trash"></i>
-            </div>
+<div id="tables-list" class="item-list">
+    
+</div>
+
+<div id="add-table-modal" class="modal hide" onclick="modalHandler.closeModal(event)">
+    <div class="modal-content">
+        <div class="modal-title">
+            Add Table
         </div>
-    </div>
-    <div class="item">
-        <div class="item-title">Landing</div>
-        <div class="item-buttons">
-            <div class="item-button button-view" data-tooltip="View Data">
-                <i class="fa-regular fa-eye"></i>
-            </div>
-            <div class="item-button button-edit" data-tooltip="Edit Structure">
-                <i class="fa-solid fa-pencil"></i>
-            </div>
-            <div class="item-button button-delete" data-tooltip="Delete Table">
-                <i class="fa-solid fa-trash"></i>
-            </div>
+        <hr>
+        <div class="modal-field">
+            <span class="modal-label">Table Name</span>
+            <input type="text" id="table-name-input" class="modal-input">
         </div>
-    </div>
-    <div class="item">
-        <div class="item-title">Register</div>
-        <div class="item-buttons">
-            <div class="item-button button-view" data-tooltip="View Data">
-                <i class="fa-regular fa-eye"></i>
-            </div>
-            <div class="item-button button-edit" data-tooltip="Edit Structure">
-                <i class="fa-solid fa-pencil"></i>
-            </div>
-            <div class="item-button button-delete" data-tooltip="Delete Table">
-                <i class="fa-solid fa-trash"></i>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="item-title">Login</div>
-        <div class="item-buttons">
-            <div class="item-button button-view" data-tooltip="View Data">
-                <i class="fa-regular fa-eye"></i>
-            </div>
-            <div class="item-button button-edit" data-tooltip="Edit Structure">
-                <i class="fa-solid fa-pencil"></i>
-            </div>
-            <div class="item-button button-delete" data-tooltip="Delete Table">
-                <i class="fa-solid fa-trash"></i>
-            </div>
+        <div class="modal-buttons">
+            <div onclick="modalHandler.closeCurrentModal()" class="modal-button button modal-cancel-button">Cancel</div>
+            <div onclick="tablesHandler.forceCreatePage()" class="modal-button button">Create Table</div>
         </div>
     </div>
 </div>
+
+<div id="delete-table-modal" class="modal hide" onclick="modalHandler.closeModal(event)">
+    <div class="modal-content">
+        <div class="modal-title">
+            Delete Table
+        </div>
+        <hr>
+        <div class="modal-field">
+            <span class="modal-label">Are you sure you want to delete this table?</span>
+            <span class="modal-label">This action CANNOT BE UNDONE!</span>
+        </div>
+        <div class="modal-buttons">
+            <div onclick="modalHandler.closeCurrentModal()" class="modal-button button">Cancel</div>
+            <div id="forcedelete-table-button" class="modal-button button modal-cancel-button">Delete Table</div>
+        </div>
+    </div>
+</div>
+<script src="js/tables.js"></script>

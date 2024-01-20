@@ -1,6 +1,6 @@
 <div class="page-header">
     <span class="title">My Pages</span>
-    <div class="button" onclick="modalHandler.openModal('add-page-modal')">
+    <div class="button" onclick="pagesHandler.createPage()">
         <i class="fa-solid fa-plus"></i>
         <span>ADD PAGE</span>
     </div>
@@ -30,11 +30,11 @@
         </div>
         <div class="modal-field">
             <span class="modal-label">Page Name</span>
-            <input type="text" class="modal-input">
+            <input type="text" id="page-name-input" class="modal-input">
         </div>
         <div class="modal-buttons">
             <div onclick="modalHandler.closeCurrentModal()" class="modal-button button modal-cancel-button">Cancel</div>
-            <div class="modal-button button">Create Page</div>
+            <div onclick="pagesHandler.forceCreatePage()" class="modal-button button">Create Page</div>
         </div>
     </div>
 </div>

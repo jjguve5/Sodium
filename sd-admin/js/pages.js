@@ -44,7 +44,7 @@ defineIfNotExists('PagesHandler', class PagesHandler {
 
         const buttons = ['view', 'edit', 'settings', 'delete'];
         const icons = ['eye', 'pencil', 'gear', 'trash'];
-        const popOvers = ['View Page', 'Edit Page', 'Page Settings', 'DeletePage'];
+        const popOvers = ['View Page', 'Edit Page', 'Page Settings', 'Delete Page'];
         const onClick = [this.viewPage, this.editPage, this.settingsPage, this.deletePage];
 
         buttons.forEach((buttonType,i) => {
@@ -67,14 +67,34 @@ defineIfNotExists('PagesHandler', class PagesHandler {
         this.pagesDiv.appendChild(pageItem);
     }
 
+    createPage(){
+        //open empty modal
+        modalHandler.openModal('add-page-modal')
+        document.getElementById('page-name-input').value = "";
+    }
+
+    async forceCreatePage(){
+        //TODO: safety checkings
+        const pageName = document.getElementById('page-name-input').value;
+
+        modalHandler.closeCurrentModal();
+        
+        const response = await commHelper.post(navHelper.GetUtilsUrl() + "backend/admin/pages/createPage.php", {pageName:pageName});
+        if(!response.success){
+            //TODO: ERROR PROMPT
+        } else {
+            this.pages.unshift(JSON.parse(response.page))
+            this.setPages();
+            //TODO: SUCCESS PROMPT
+        }
+    }
+
     viewPage(index){
-        console.log("View page for page "+index+" clicked!");
-        //open in new tab 
         window.open(navHelper.GetRootUrl()+pagesHandler.pages[index].pageURL, "_blank");
     }
 
     editPage(index){
-        console.log("Edit page for page "+index+" clicked!");
+        window.open(navHelper.GetRootUrl()+"sd-admin/editPage.html?pageKey="+pagesHandler.pages[index].key,"_blank");
     }
 
     settingsPage(index){

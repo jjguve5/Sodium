@@ -2,7 +2,7 @@
     // TODO: add more deletion logic for removing
     // other files of the page like css and js not needed
 
-    include '../../auth/functions/isLoggedInAdmin.php';
+    require_once('../../auth/functions/isLoggedInAdmin.php');
 
     if (!isAdminLoggedIn()) {
         echo json_encode(['success' => false]);
@@ -21,7 +21,7 @@
     $pageKey = $_POST['pageKey'];
 
     // Include necessary files
-    include '../../general/functions/getClearPath.php';
+    require_once('../../general/functions/getClearPath.php');
 
     // Define file paths
     $jsonFilePath = getClearPath() . "sd-content/data/pages/" . $pageKey . ".json";

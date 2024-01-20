@@ -1,6 +1,6 @@
 <?php
     header('Content-Type: application/json');
-    include 'functions/isLoggedInAdmin.php';
+    require_once('functions/isLoggedInAdmin.php');
 
     $result = isAdminLoggedIn();
 
