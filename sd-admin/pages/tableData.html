@@ -1,0 +1,118 @@
+<div class="page-header">
+    <span class="title">
+        <span>
+            <i class="fa-solid fa-arrow-left"></i>
+        </span>
+        <span>
+            Table Name
+        </span>
+    </span>
+    <div class="button" onclick="tablesHandler.createTable()">
+        <i class="fa-solid fa-plus"></i>
+        <span>INSERT ROW</span>
+    </div>
+</div>
+<div class="page-header">
+    <div class="modal-field">
+        <input type="text" id="row-search-input" class="modal-input" placeholder="Search Row...">
+    </div>
+</div>
+<table id="editabletable">
+    <tr>
+        <th>ID</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th>ROLE</th>
+        <th>DELETE</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>jjguve5@gmail.com</td>
+        <td>alkmskajfndajkajkfndajn</td>
+        <td>admin</td>
+        <td>
+            <div class="item-button button-delete" data-tooltip="Delete Row">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>jjguve5@gmail.com</td>
+        <td>alkmskajfndajkajkfndajn</td>
+        <td>admin</td>
+        <td>
+            <div class="item-button button-delete" data-tooltip="Delete Row">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>jjguve5@gmail.com</td>
+        <td>alkmskajfndajkajkfndajn</td>
+        <td>admin</td>
+        <td>
+            <div class="item-button button-delete" data-tooltip="Delete Row">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>jjguve5@gmail.com</td>
+        <td>alkmskajfndajkajkfndajn</td>
+        <td>admin</td>
+        <td>
+            <div class="item-button button-delete" data-tooltip="Delete Row">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>jjguve5@gmail.com</td>
+        <td>alkmskajfndajkajkfndajn</td>
+        <td>admin</td>
+        <td>
+            <div class="item-button button-delete" data-tooltip="Delete Row">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="add-table-modal" class="modal hide" onclick="modalHandler.closeModal(event)">
+    <div class="modal-content">
+        <div class="modal-title">
+            Add Table
+        </div>
+        <hr>
+        <div class="modal-field">
+            <span class="modal-label">Table Name</span>
+            <input type="text" id="table-name-input" class="modal-input">
+        </div>
+        <div class="modal-buttons">
+            <div onclick="modalHandler.closeCurrentModal()" class="modal-button button modal-cancel-button">Cancel</div>
+            <div onclick="tablesHandler.forceCreateTable()" class="modal-button button">Create Table</div>
+        </div>
+    </div>
+</div>
+
+<div id="delete-table-modal" class="modal hide" onclick="modalHandler.closeModal(event)">
+    <div class="modal-content">
+        <div class="modal-title">
+            Delete Table
+        </div>
+        <hr>
+        <div class="modal-field">
+            <span class="modal-label">Are you sure you want to delete this table?</span>
+            <span class="modal-label">This action CANNOT BE UNDONE!</span>
+        </div>
+        <div class="modal-buttons">
+            <div onclick="modalHandler.closeCurrentModal()" class="modal-button button">Cancel</div>
+            <div id="forcedelete-table-button" class="modal-button button modal-cancel-button">Delete Table</div>
+        </div>
+    </div>
+</div>
+<script src="js/tableData.js"></script>

@@ -332,10 +332,10 @@ hr{
 
 .modal-lable{
     font-size: x-large;
+    margin-bottom:5px;
 }
 
 .modal-input{
-    margin-top:5px;
     padding:5px;
     border-radius: 4px;
     outline: 0;
@@ -403,6 +403,50 @@ hr{
 
 .modal-cancel-button{
     background-image: linear-gradient(120deg, #ff758c, #ff7eb3); /* Gradient for delete */
+}
+
+/* Style for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #3a033a; /* Dark background for table */
+    color: white; /* Text color */
+    font-family: 'Sora'; /* Consistent font */
+    border-radius: 7px; /* Rounded corners */
+    overflow: hidden; /* To respect border-radius */
+}
+
+/* Style for table headers (th) */
+th {
+    background: #490640; /* Slightly different background for header */
+    padding: 15px; /* Padding for spacing */
+    font-size: large; /* Larger font size for headers */
+    border-bottom: 2px solid rgb(68, 24, 85); /* Border to separate header */
+}
+
+/* Style for table rows (tr) */
+tr {
+    transition: background-color .3s; /* Transition for hover effect */
+}
+
+tr:nth-child(even) {
+    background-color: #320732; /* Zebra striping for rows */
+}
+
+/* Style for table data (td) */
+td {
+    padding: 10px; /* Padding for spacing */
+    border-bottom: 1px solid #4d004d; /* Border to separate rows */
+}
+
+td > div{
+    margin:auto!important;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #260326; /* Darker background on hover */
 }
 
 .hide {
