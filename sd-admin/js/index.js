@@ -57,6 +57,7 @@ async function GoToPage(page) {
         document.getElementById('main-page').appendChild(newScript);
     });
 
+    //commHelper.ClearParams();
     commHelper.SetParam('page', page);
 
     document.getElementById('content').classList.remove('hide');

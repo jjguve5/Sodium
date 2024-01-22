@@ -139,7 +139,7 @@ body {
 .main-page{
     flex: 1;
     margin-left: 20px;
-    padding:20px;
+    padding-left:10px;
 }
 
 .page-header{
@@ -423,6 +423,7 @@ th {
     padding: 15px; /* Padding for spacing */
     font-size: large; /* Larger font size for headers */
     border-bottom: 2px solid rgb(68, 24, 85); /* Border to separate header */
+    text-transform: uppercase;
 }
 
 /* Style for table rows (tr) */
@@ -438,6 +439,8 @@ tr:nth-child(even) {
 td {
     padding: 10px; /* Padding for spacing */
     border-bottom: 1px solid #4d004d; /* Border to separate rows */
+    text-align: center;
+    font-size: medium;
 }
 
 td > div{

@@ -69,4 +69,10 @@ class CommunicationHelper{
         url.searchParams.set(param, value);
         window.history.pushState({ path: url.href }, '', url.href);
     }
+
+    ClearParams(){
+        const url = new URL(window.location.href);
+        url.search = ''; // Clear the entire search string
+        window.history.pushState({ path: url.href }, '', url.href);
+    }
 }

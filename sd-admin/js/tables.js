@@ -79,6 +79,8 @@ defineIfNotExists('TablesHandler', class TablesHandler {
 
     viewTable(index){
         //view table data
+        GoToPage('tableData');
+        commHelper.SetParam('table',tablesHandler.tables[index].title)
     }
 
     editTable(index){
