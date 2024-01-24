@@ -140,6 +140,7 @@ body {
     flex: 1;
     margin-left: 20px;
     padding-left:10px;
+    overflow-y: auto;
 }
 
 .page-header{
@@ -407,6 +408,7 @@ hr{
 
 /* Style for tables */
 table {
+    table-layout:fixed;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -441,6 +443,9 @@ td {
     border-bottom: 1px solid #4d004d; /* Border to separate rows */
     text-align: center;
     font-size: medium;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }
 
 td > div{
